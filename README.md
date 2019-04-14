@@ -1,0 +1,2 @@
+# hibernate_0060_relation
+hibernate_0060_relation
