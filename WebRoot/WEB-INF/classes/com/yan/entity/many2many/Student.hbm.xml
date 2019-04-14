@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.yan.entity.many2many">
+    <class name="Student" table="T_STUDENT">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" precision="18" scale="0" />
+            <generator class="sequence">
+            	<param name="sequence">seq_student</param>
+            </generator>
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" length="20" />
+        </property>
+        <set name="courses" table="STU_COUR">
+            <key>
+                <column name="STU_ID" precision="18" scale="0" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.yan.entity.many2many.Course">
+                <column name="COUR_ID" precision="18" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.yan.entity.one2many">
+    <class name="User" table="T_USERS" schema="YANJUN">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" precision="18" scale="0" />
+            <generator class="sequence">
+            	<param name="sequence">seq_users</param>
+            </generator>
+        </id>
+        <many-to-one name="role" class="Role" fetch="join">
+            <column name="ROLE_ID" precision="18" scale="0" />
+        </many-to-one>
+        <property name="userame" type="java.lang.String">
+            <column name="USERAME" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.yan.entity.one2one2">
+	<class name="Person" table="T_PERSON" schema="YANJUN">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="18" scale="0" />
+			<generator class="sequence">
+				<param name="sequence">seq_person</param>
+			</generator>
+		</id>
+		<property name="username" type="java.lang.String">
+			<column name="USERNAME" length="20" />
+		</property>
+		<one-to-one name="idCard" property-ref="person" cascade="all"/>
+	</class>
+</hibernate-mapping>

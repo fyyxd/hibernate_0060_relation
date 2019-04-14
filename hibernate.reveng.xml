@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="T_HUS" schema="YANJUN"
+		class="com.yan.entity.Husband">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_WIFE" schema="YANJUN" class="com.yan.entity.Wife">
+		<primary-key>
+			<generator class="foreign"></generator>
+		</primary-key>
+	</table>
+	<table name="T_PERSON" schema="YANJUN"
+		class="com.yan.entity.one2one2.Person">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_CARD" schema="YANJUN"
+		class="com.yan.entity.one2one2.IdCard">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_ROLES" schema="YANJUN"
+		class="com.yan.entity.one2many.Role">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_USERS" schema="YANJUN"
+		class="com.yan.entity.one2many.User">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_STUDENT" schema="YANJUN"
+		class="com.yan.entity.many2many.Student">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_COURSE" schema="YANJUN"
+		class="com.yan.entity.many2many.Course">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_CATALOG" schema="YANJUN"
+		class="com.yan.entity.self.Catalog">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_ANIMAL" schema="YANJUN"
+		class="com.yan.extends1.Animal">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="T_STU" schema="YANJUN" class="com.yan.extend2.Stu">
+		<primary-key>
+			<generator class="hilo"></generator>
+		</primary-key>
+	</table>
+<table name="T_JIAOTONG" schema="YANJUN"
+	class="com.yan.extend3.Jiaotong">
+	<primary-key>
+		<generator class="sequence"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>
